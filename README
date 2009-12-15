@@ -1,0 +1,15 @@
+<% breadcrumbs.to_html do |b| %>
+  <% b.separator do %> &raquo;&raquo;&raquo; <% end %>
+
+  <% b.item do |item, index, items| %>
+    <%= index %> of <%= items.size %>: <%= item.inspect %>
+  <% end %>
+
+  <% b.current do |item, index, items| %>
+    <em>Last: <%= item.inspect %></em>
+  <% end %>
+
+  <% b.wrap do |result| %>
+    <blockquote><%= result %></blockquote>
+  <% end %>
+<% end %>
